@@ -1,0 +1,14 @@
+.header {
+  background-color: #009dae;
+  color: #ffe652;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  height: 100%;
+}
+
+.header img {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0.5rem;
+}

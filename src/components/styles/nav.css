@@ -1,0 +1,20 @@
+.nav {
+  background-color: #71dfe7;
+  color: #ffe652;
+  font-weight: bold;
+  text-shadow: #009dae 1px 1px 12px;
+  height: 100%;
+  margin: 0px;
+  padding: 0%;
+}
+
+.nav .nav-item {
+  list-style-type: none;
+  padding: 15px;
+  transition: all 0.5s;
+}
+
+.nav .nav-item:hover {
+  background-color: #c2fff9;
+  color: black;
+}
