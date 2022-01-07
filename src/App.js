@@ -1,27 +1,11 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
+import React from "react";
 
-import "./App.css";
+import AppComponent from "./components/AppComponent";
+
 import "./Normalize.css";
 
 function App() {
-  return (
-    <div class="container">
-      <header>
-        <Header />
-      </header>
-
-      <aside>
-        <Nav />
-      </aside>
-      <main></main>
-
-      <footer>
-        <Footer />
-      </footer>
-    </div>
-  );
+  return <AppComponent />;
 }
 
 export default App;
