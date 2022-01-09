@@ -5,7 +5,7 @@ import "./styles/footer.css";
 function Footer(props) {
   return (
     <div className="footer">
-      <h2>&copy; Crafty moon - 2021</h2>
+      <h3>&copy; Crafty moon - 2021</h3>
     </div>
   );
 }

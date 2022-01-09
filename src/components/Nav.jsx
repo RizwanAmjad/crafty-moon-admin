@@ -1,21 +1,21 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./styles/nav.css";
 
 function Nav(props) {
   return (
     <ul className="nav">
-      <Link to="/">
+      <NavLink to="/">
         <li className="nav-item">Home</li>
-      </Link>
-      <Link to="/categories">
+      </NavLink>
+      <NavLink to="/categories">
         <li className="nav-item">Categories</li>
-      </Link>
-      <Link to="/paintings">
+      </NavLink>
+      <NavLink to="/paintings">
         <li className="nav-item">Paintings</li>
-      </Link>
+      </NavLink>
     </ul>
   );
 }

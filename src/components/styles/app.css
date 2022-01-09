@@ -12,6 +12,7 @@
 
 header {
   grid-area: header;
+  height: auto;
 }
 
 aside {
@@ -20,8 +21,23 @@ aside {
 
 main {
   grid-area: main;
+  padding: 0.2rem;
+  overflow-y: scroll;
 }
 
 footer {
   grid-area: footer;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    grid-template-columns: 100fr;
+    grid-template-rows: 5rem min-content auto 4rem;
+
+    grid-template-areas:
+      "header header"
+      "aside aside"
+      "main main"
+      "footer footer";
+  }
 }

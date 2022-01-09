@@ -2,7 +2,7 @@
   background-color: #71dfe7;
   color: #ffe652;
   font-weight: bold;
-  text-shadow: #009dae 1px 1px 12px;
+  text-shadow: #009dae 1px 1px 8px;
   height: 100%;
   margin: 0px;
   padding: 0%;
@@ -13,13 +13,26 @@
   color: inherit;
 }
 
+.nav .active li {
+  background-color: #ffe652;
+  color: #009dae;
+  text-shadow: #71dfe7 1px 1px 8px;
+}
+
 .nav .nav-item {
   list-style-type: none;
   padding: 15px;
   transition: all 0.5s;
 }
 
-.nav .nav-item:hover {
+.nav .nav-item:hover,
+.nav .nav-item:focus {
   background-color: #c2fff9;
   color: black;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav {
+    display: flex;
+  }
 }
