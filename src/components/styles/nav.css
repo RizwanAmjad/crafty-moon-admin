@@ -6,6 +6,7 @@
   height: 100%;
   margin: 0px;
   padding: 0%;
+  width: 10rem;
 }
 
 .nav a {
@@ -20,19 +21,66 @@
 }
 
 .nav .nav-item {
+  align-items: center;
+  display: flex;
   list-style-type: none;
   padding: 15px;
   transition: all 0.5s;
 }
 
-.nav .nav-item:hover,
-.nav .nav-item:focus {
+.nav .nav-item:hover {
   background-color: #c2fff9;
   color: black;
 }
 
+.nav-item svg {
+  font-size: 1.22rem;
+  padding: 0.2rem;
+}
+
+#expand-button {
+  color: #009dae;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+}
+
+.nav-collapsed {
+  width: 4rem;
+}
+
+.nav-collapsed .nav-title {
+  opacity: 0;
+  font-size: 0%;
+}
+
+.nav-collapsed svg {
+  font-size: 1.5rem;
+}
+
+.nav-collapsed .nav-title {
+  width: 0%;
+}
+
+.nav,
+.nav svg,
+.nav .nav-title {
+  transition: 1s font-size ease-in-out, 1s width ease-in-out,
+    1s opacity ease-in-out;
+}
+
 @media only screen and (max-width: 800px) {
+  /*
+  TODO: for mobiles and Tablets
+  */
   .nav {
     display: flex;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  #expand-button {
+    align-items: center;
+    padding: 0% 1rem;
   }
 }
