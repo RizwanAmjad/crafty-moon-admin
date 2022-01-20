@@ -1,0 +1,16 @@
+.form-input {
+  background-color: #71dfe7;
+  border: 1px solid #009dae;
+  border-radius: 0.5rem;
+  transition: 0.2s all ease-in;
+}
+
+.form-input:hover {
+  border-color: #71dfe7;
+  background-color: #ffe652;
+}
+
+.input-error {
+  color: tomato;
+  text-align: center;
+}

@@ -1,0 +1,35 @@
+.category-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+th {
+  border-bottom: 2px solid #ffe652;
+}
+
+tr {
+  background-color: #009dae;
+}
+
+tr:nth-child(even) {
+  background-color: #71dfe7;
+}
+
+tr .form-input {
+  background-color: #ffe652;
+  padding: 0.5rem;
+}
+
+tr .form-input:hover {
+  background-color: #71dfe7;
+}
+
+tr:nth-child(even) .form-input:hover {
+  background-color: #009dae;
+}

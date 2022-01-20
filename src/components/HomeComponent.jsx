@@ -1,52 +1,7 @@
 import React from "react";
 
 function HomeComponent(props) {
-  return (
-    <div>
-      <ul>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-        <li>Ok</li>
-      </ul>
-    </div>
-  );
+  return <div>Home Component</div>;
 }
 
 export default HomeComponent;
