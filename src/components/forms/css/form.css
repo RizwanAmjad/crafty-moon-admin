@@ -1,12 +1,10 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 30%;
   margin: 0 1rem;
 }
 
 .form .form-input {
-  height: 2rem;
   margin: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.8rem;
 }

@@ -20,7 +20,7 @@ function HomeComponent(props) {
   ];
 
   return (
-    <div className="row">
+    <div className="category-container">
       <AddCategoriesComponent />
       <ListCategoriesComponent categories={categories} />
     </div>
