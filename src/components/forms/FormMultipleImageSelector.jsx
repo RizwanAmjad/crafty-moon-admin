@@ -8,6 +8,7 @@ import { MdAddAPhoto } from "react-icons/md";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 import "./css/form-image-selector.css";
+import "./css/alert-dialog.css";
 
 function FormMultipleImageSelector({ name }) {
   const { values, setValues, errors, touched, setTouched } = useFormikContext();
@@ -19,20 +20,29 @@ function FormMultipleImageSelector({ name }) {
 
   const unselectImage = (image) => {
     confirmAlert({
-      title: "Delete Image?",
-      message: "This will remove image from selected list",
-      buttons: [
-        {
-          label: "Yes",
-          onClick: () => {
-            values[name] = values[name].filter((img) => img !== image);
-            setValues(values);
-          },
-        },
-        {
-          label: "No",
-        },
-      ],
+      customUI: ({ onClose }) => {
+        return (
+          <div className="alert-dialog">
+            <h2>Are you sure?</h2>
+            <p>You want to delete this Image?</p>
+            <div className="alert-btn-group">
+              <button className="alert-btn" onClick={onClose}>
+                No
+              </button>
+              <button
+                className="alert-btn"
+                onClick={() => {
+                  values[name] = values[name].filter((img) => img !== image);
+                  setValues(values);
+                  onClose();
+                }}
+              >
+                Yes, Delete it!
+              </button>
+            </div>
+          </div>
+        );
+      },
     });
   };
 
