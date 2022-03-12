@@ -1,9 +1,15 @@
 import apiClient from "./client";
 
+const endpoint = "categories";
+
 const getAllCategories = () => {
-  return apiClient.get("categories");
+  return apiClient.get(endpoint);
 };
 
-const exports = { getAllCategories };
+const addCategory = (category) => {
+  return apiClient.post(apiClient, category);
+};
+
+const exports = { addCategory, getAllCategories };
 
 export default exports;

@@ -4,27 +4,30 @@ import AddCategoriesComponent from "./AddCategoriesComponent";
 import ListCategoriesComponent from "./ListCategoriesComponent";
 
 import categoriesApi from "../api/categories";
+import useApi from "../hooks/useApi";
 
 import "./styles/categories.css";
 
 function HomeComponent(props) {
-  const [loading, setLoading] = useState(false);
+  const { loading, request: getCategoriesRequest } = useApi(
+    categoriesApi.getAllCategories
+  );
   const [categories, setCategories] = useState([]);
 
-  const loadPaintings = async () => {
-    setLoading(true);
-    const { data, problem } = await categoriesApi.getAllCategories();
-    setLoading(false);
-    if (!problem) setCategories(data);
+  const handleAdd = (newCategory) => {
+    setCategories([...categories, newCategory]);
   };
 
   useEffect(() => {
-    loadPaintings();
+    (async () => {
+      const { data, error } = await getCategoriesRequest();
+      if (!error) return setCategories(data);
+    })();
   }, []);
 
   return (
     <div className="category-container">
-      <AddCategoriesComponent />
+      <AddCategoriesComponent handleAdd={handleAdd} />
       <ListCategoriesComponent categories={categories} loading={loading} />
     </div>
   );
