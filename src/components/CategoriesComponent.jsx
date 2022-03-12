@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import AddCategoriesComponent from "./AddCategoriesComponent";
 import ListCategoriesComponent from "./ListCategoriesComponent";
 
+import categoriesApi from "../api/categories";
+
 import "./styles/categories.css";
 
 function HomeComponent(props) {
-  const categories = [
-    {
-      _id: "619e0bee49347afdf8505543",
-      title: "Canvas",
-      paintingsCount: 0,
-    },
-    {
-      _id: "619e0bf749347afdf8505545",
-      title: "Oil Paintings",
-      paintingsCount: 0,
-    },
-  ];
+  const [loading, setLoading] = useState(false);
+  const [categories, setCategories] = useState([]);
+
+  const loadPaintings = async () => {
+    setLoading(true);
+    const { data, problem } = await categoriesApi.getAllCategories();
+    setLoading(false);
+    if (!problem) setCategories(data);
+  };
+
+  useEffect(() => {
+    loadPaintings();
+  }, []);
 
   return (
     <div className="category-container">
       <AddCategoriesComponent />
-      <ListCategoriesComponent categories={categories} />
+      <ListCategoriesComponent categories={categories} loading={loading} />
     </div>
   );
 }

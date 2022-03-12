@@ -1,8 +1,14 @@
 import React from "react";
 
+import LoadingComponent from "./LoadingComponent";
+
 import "./styles/category-list.css";
 
-function ListCategoriesComponent({ categories }) {
+function ListCategoriesComponent({ categories, loading }) {
+  if (loading) {
+    return <LoadingComponent message="Loading..." />;
+  }
+
   return (
     <table className="category-table">
       <thead>
