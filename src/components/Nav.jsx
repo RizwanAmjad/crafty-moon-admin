@@ -8,12 +8,17 @@ import {
   MdPalette,
   MdToggleOff,
   MdToggleOn,
+  MdLogout,
 } from "react-icons/md";
+
+import useAuth from "../hooks/useAuth";
 
 import "./styles/nav.css";
 
 function Nav(props) {
   const [expanded, setExpanded] = useState(false);
+
+  const { logout } = useAuth();
 
   return (
     <ul className={`nav ${!expanded ? "nav-collapsed" : ""}`}>
@@ -38,6 +43,10 @@ function Nav(props) {
           <div className="nav-title">Paintings</div>
         </li>
       </NavLink>
+      <li className="nav-item" onClick={logout}>
+        <MdLogout />
+        <div className="nav-title">Logout</div>
+      </li>
     </ul>
   );
 }

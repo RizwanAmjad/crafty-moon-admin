@@ -1,0 +1,12 @@
+.login-container {
+  align-items: center;
+  background: radial-gradient(white, #009dae);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-title {
+  color: black;
+}
