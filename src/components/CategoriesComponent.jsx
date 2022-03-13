@@ -27,7 +27,7 @@ function HomeComponent(props) {
 
   return (
     <div className="category-container">
-      <AddCategoriesComponent handleAdd={handleAdd} />
+      <AddCategoriesComponent addCategoryToList={handleAdd} />
       <ListCategoriesComponent categories={categories} loading={loading} />
     </div>
   );

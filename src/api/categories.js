@@ -7,7 +7,7 @@ const getAllCategories = () => {
 };
 
 const addCategory = (category) => {
-  return apiClient.post(apiClient, category);
+  return apiClient.post(endpoint, category);
 };
 
 const exports = { addCategory, getAllCategories };

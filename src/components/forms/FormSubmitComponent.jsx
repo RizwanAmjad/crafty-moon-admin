@@ -3,15 +3,15 @@ import { useFormikContext } from "formik";
 
 import "./css/form-input.css";
 
-function FormSubmitComponent({ name, ...props }) {
+function FormSubmitComponent({ name, error, value, ...props }) {
   const { values, handleSubmit, isSubmitting } = useFormikContext();
 
   return (
     <input
-      className="form-input"
+      className={`form-input ${error ? "form-error" : ""}`}
       type="submit"
       onClick={handleSubmit}
-      value={values[name]}
+      value={error || value}
       disabled={isSubmitting}
       {...props}
     />

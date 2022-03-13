@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import * as Yup from "yup";
 
@@ -20,12 +20,14 @@ const loginSchema = Yup.object().shape({
 
 function LoginComponent(props) {
   const { login } = useAuth();
+  const [error, setError] = useState();
   const { request: loginAdminRequest } = useApi(adminApi.loginAdmin);
 
   const handleLogin = async (admin, { setSubmitting }) => {
     setSubmitting(true);
     const { error, data } = await loginAdminRequest(admin);
     if (!error) login(data);
+    else setError(data);
     setSubmitting(false);
   };
 
@@ -44,7 +46,7 @@ function LoginComponent(props) {
           name="password"
           placeholder="Password"
         />
-        <FormSubmitComponent value="Login" />
+        <FormSubmitComponent value="Login" error={error} />
       </FormComponent>
     </div>
   );

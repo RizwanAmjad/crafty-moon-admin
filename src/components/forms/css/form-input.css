@@ -14,3 +14,12 @@
   color: tomato;
   text-align: center;
 }
+
+.form-error {
+  background-color: tomato;
+  color: #ffe652;
+}
+
+.form-error:hover {
+  color: tomato;
+}

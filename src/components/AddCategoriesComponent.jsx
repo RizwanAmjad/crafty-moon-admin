@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import * as Yup from "yup";
 
@@ -6,14 +6,22 @@ import FormComponent from "./forms/FormComponent";
 import FormInputComponent from "./forms/FormInputComponent";
 import FormSubmitComponent from "./forms/FormSubmitComponent";
 
+import useApi from "../hooks/useApi";
+import categoriesApi from "../api/categories";
+
 const categoriesSchema = Yup.object().shape({
   title: Yup.string().required().label("Title"),
 });
 
-function AddCategoriesComponent(props) {
-  const onSubmit = (formData, { setSubmitting }) => {
-    // TODO Handle Submission here
-    console.log(formData);
+function AddCategoriesComponent({ addCategoryToList }) {
+  const [error, setError] = useState();
+  const { request: addCategoryRequest } = useApi(categoriesApi.addCategory);
+
+  const onSubmit = async (category, { setSubmitting }) => {
+    setSubmitting(true);
+    const { error, data } = await addCategoryRequest(category);
+    if (!error) addCategoryToList(data);
+    else setError(data);
     setSubmitting(false);
   };
 
@@ -30,7 +38,7 @@ function AddCategoriesComponent(props) {
         name="title"
         placeholder="Category Title"
       />
-      <FormSubmitComponent value="Add Category" />
+      <FormSubmitComponent value="Add Category" error={error} />
     </FormComponent>
   );
 }

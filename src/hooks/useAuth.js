@@ -10,7 +10,7 @@ function useAuth() {
 
   useEffect(() => {
     (() => {
-      const authKey = localStorage.getItem("authToken");
+      const authKey = localStorage.getItem(authTokenKey);
       if (authKey) login(authKey);
     })();
   }, []);
