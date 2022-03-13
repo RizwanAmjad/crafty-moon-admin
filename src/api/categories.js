@@ -10,6 +10,10 @@ const addCategory = (category) => {
   return apiClient.post(endpoint, category);
 };
 
-const exports = { addCategory, getAllCategories };
+const deleteCategory = (id) => {
+  return apiClient.delete(`${endpoint}/${id}`);
+};
+
+const exports = { addCategory, getAllCategories, deleteCategory };
 
 export default exports;

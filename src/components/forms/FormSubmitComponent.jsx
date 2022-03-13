@@ -4,7 +4,7 @@ import { useFormikContext } from "formik";
 import "./css/form-input.css";
 
 function FormSubmitComponent({ name, error, value, ...props }) {
-  const { values, handleSubmit, isSubmitting } = useFormikContext();
+  const { handleSubmit, isSubmitting } = useFormikContext();
 
   return (
     <input

@@ -18,6 +18,10 @@ function HomeComponent(props) {
     setCategories([...categories, newCategory]);
   };
 
+  const handleRemove = (id) => {
+    setCategories(categories.filter((category) => category._id != id));
+  };
+
   useEffect(() => {
     (async () => {
       const { data, error } = await getCategoriesRequest();
@@ -28,7 +32,11 @@ function HomeComponent(props) {
   return (
     <div className="category-container">
       <AddCategoriesComponent addCategoryToList={handleAdd} />
-      <ListCategoriesComponent categories={categories} loading={loading} />
+      <ListCategoriesComponent
+        categories={categories}
+        loading={loading}
+        removeCategoryFromList={handleRemove}
+      />
     </div>
   );
 }
